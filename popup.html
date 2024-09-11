@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历自动填写插件</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            padding: 20px;
+            max-width: 400px;  /* 修改宽度 */
+        }
+        h2 {
+            color: #4a90e2;
+            text-align: center;
+        }
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .status.match { background-color: #dff0d8; color: #3c763d; }
+        .status.nomatch { background-color: #f2dede; color: #a94442; }
+        .status.filled { background-color: #d9edf7; color: #31708f; }
+        .status.notfilled { background-color: #fcf8e3; color: #8a6d3b; }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 200px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #357ab7;
+        }
+        #autoFill {
+          padding: 10px 20px;
+          margin-top: 10px;
+          background-color: #3c763d;
+        }
+    </style>
+</head>
+<body>
+    <h2>𝓞𝓷𝓬𝓮𝓡𝓮𝓼𝓾𝓶𝓮</h2>
+    <h2>简历自动填写插件</h2>
+    
+    <!-- 状态显示 -->
+    <div id="websiteStatus" class="status">正在检查网站匹配情况...</div>
+    <div id="infoStatus" class="status">正在检查是否已填写个人信息...</div>
+    
+    <!-- 跳转到填写个人信息的页面 -->
+    <button id="openPage">🚀完善/修改信息</button>
+    
+    <!-- 自动填写按钮 -->
+    <button id="autoFill">🌟一键填写🌟</button>
+
+    <script src="popup.js"></script>
+</body>
+</html>
