@@ -78,6 +78,32 @@ document.addEventListener('DOMContentLoaded', function () {
         emailInput.dispatchEvent(new Event('change', { bubbles: true }));
     }
 
+    // 身份证号输入框
+    const identificationInput = document.querySelector('input.atsx-input.id-card-input[type="text"]');
+    if (identificationInput) {
+        identificationInput.value = resumeData.identification || '';
+        identificationInput.dispatchEvent(new Event('input', { bubbles: true }));
+        identificationInput.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    // 学校名称输入框
+    // <input id="education[1].school" autocomplete="off" class="atsx-select-search__field" value="">
+    const schoolInput = document.querySelector('input[id="education[1].school"]');
+    if (schoolInput) {
+        schoolInput.value = resumeData.school || '';
+        schoolInput.dispatchEvent(new Event('input', { bubbles: true }));
+        schoolInput.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    // 学历输入框
+    // <input autocomplete="off" placeholder="请输入" type="text" id="education[1].fieldOfStudy" data-__meta="[object Object]" data-__field="[object Object]" class="atsx-input atsx-input-lg" value="">
+    const fieldOfStudyInput = document.querySelector('input[id="education[1].fieldOfStudy"]');
+    if (fieldOfStudyInput) {
+        fieldOfStudyInput.value = resumeData.fieldOfStudy || '';
+        fieldOfStudyInput.dispatchEvent(new Event('input', { bubbles: true }));
+        fieldOfStudyInput.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
     const experienceInput = document.querySelector('textarea[id="experience"]');
     if (experienceInput) {
         experienceInput.value = resumeData.experience || '';
@@ -97,6 +123,29 @@ document.addEventListener('DOMContentLoaded', function () {
         cityInput.value = resumeData.preferred_city || '';
         cityInput.dispatchEvent(new Event('input', { bubbles: true }));
         cityInput.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    // 项目
+    // <input autocomplete="off" placeholder="请输入" type="text" id="project[1].name" data-__meta="[object Object]" data-__field="[object Object]" class="atsx-input atsx-input-lg" value="">
+    const projectNameInput = document.querySelector('input[id="project[1].name"]');
+    if (projectNameInput) {
+        projectNameInput.value = resumeData.projectName || '';
+        projectNameInput.dispatchEvent(new Event('input', { bubbles: true }));
+        projectNameInput.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    // <input autocomplete="off" placeholder="请输入" type="text" id="project[1].role" data-__meta="[object Object]" data-__field="[object Object]" class="atsx-input atsx-input-lg" value="">
+    const projectRoleInput = document.querySelector('input[id="project[1].role"]');
+    if (projectRoleInput) {
+        projectRoleInput.value = resumeData.projectRole || '';
+        projectRoleInput.dispatchEvent(new Event('input', { bubbles: true }));
+        projectRoleInput.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    // <textarea placeholder="请输入" id="project[1].desc" data-__meta="[object Object]" data-__field="[object Object]" class="atsx-input" style="height: 115px; min-height: 115px; max-height: 9.0072e+15px;"></textarea>
+    const projectDescriptionInput = document.querySelector('textarea[id="project[1].desc"]');
+    if (projectDescriptionInput) {
+        projectDescriptionInput.value = resumeData.projectDescription || '';
+        projectDescriptionInput.dispatchEvent(new Event('input', { bubbles: true }));
+        projectDescriptionInput.dispatchEvent(new Event('change', { bubbles: true }));
     }
 }
 
