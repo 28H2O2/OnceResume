@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         nameInput.dispatchEvent(new Event('change', { bubbles: true })); // 模拟 change 事件
     }
 
-    const mobileInput = document.querySelector('input[id="mobile"]');
+    const mobileInput = document.querySelector('input.atsx-input.atsx-input-lg.atsx-phone-input[type="text"]');
     if (mobileInput) {
         mobileInput.value = resumeData.mobile || '';
         mobileInput.dispatchEvent(new Event('input', { bubbles: true }));
