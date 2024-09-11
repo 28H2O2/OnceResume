@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>填写个人信息</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            padding: 20px;
+            max-width: 600px; /* 设置宽度 */
+            margin: auto;
+        }
+        h2 {
+            color: #4a90e2;
+            text-align: center;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #d9d9d9;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #357ab7;
+        }
+        .section-title {
+            font-size: 18px;
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>填写个人信息</h2>
+
+    <div class="form-section">
+        <div class="section-title">基础信息</div>
+        <label for="name">姓名</label>
+        <input id="name" type="text" placeholder="请输入您的姓名">
+
+        <label for="mobile">手机号码</label>
+        <input id="mobile" type="text" placeholder="请输入您的手机号码">
+
+        <label for="email">邮箱</label>
+        <input id="email" type="text" placeholder="请输入您的邮箱">
+
+        <label for="identification">个人证件</label>
+        <input id="identification" type="text" placeholder="请输入您的个人证件号码">
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">教育经历</div>
+        <label for="school">学校</label>
+        <input id="school" type="text" placeholder="请输入您的学校">
+
+        <label for="degree">学历</label>
+        <input id="degree" type="text" placeholder="请输入您的学历">
+
+        <label for="fieldOfStudy">专业</label>
+        <input id="fieldOfStudy" type="text" placeholder="请输入您的专业">
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">工作经历</div>
+        <label for="company">公司</label>
+        <input id="company" type="text" placeholder="请输入您工作的公司">
+
+        <label for="jobTitle">职位</label>
+        <input id="jobTitle" type="text" placeholder="请输入您的职位">
+
+        <label for="jobPeriod">起止时间</label>
+        <input id="jobPeriod" type="text" placeholder="请输入您的起止时间">
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">项目经历</div>
+        <label for="projectName">项目名称</label>
+        <input id="projectName" type="text" placeholder="请输入项目名称">
+
+        <label for="projectRole">项目角色</label>
+        <input id="projectRole" type="text" placeholder="请输入您的项目角色">
+
+        <label for="projectDescription">项目描述</label>
+        <textarea id="projectDescription" placeholder="请输入项目描述"></textarea>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">技能</div>
+        <label for="skills">技能</label>
+        <textarea id="skills" placeholder="请输入您的技能"></textarea>
+    </div>
+
+    <button id="saveInfo">保存信息</button>
+
+    <script src="info_form.js"></script>
+</body>
+</html>

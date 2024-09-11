@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "简历自动填写插件",
+    "version": "1.0",
+    "description": "一个自动填写招聘网站简历信息的 Chrome 插件",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_width": 400
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.jobs.bytedance.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
