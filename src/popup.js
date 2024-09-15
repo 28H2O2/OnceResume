@@ -115,6 +115,27 @@ document.addEventListener('DOMContentLoaded', function () {
                                 return matches;
                             }
 
+                            // 通用的 findLabel 函数
+                            function findLabel(input) {
+                                // 1. 先检查是否有标准的 <label> 元素
+                                let label = input.closest('label') || document.querySelector(`label[for="${input.id}"]`);
+
+                                // 2. 如果没有标准的 <label>，向上遍历父级节点寻找 span 类名包含 'label' 的元素
+                                if (!label) {
+                                    let currentElement = input.parentElement;
+                                    while (currentElement) {
+                                        const spanLabel = currentElement.querySelector('span[class*="label"]');
+                                        if (spanLabel) {
+                                            label = spanLabel;
+                                            break;
+                                        }
+                                        currentElement = currentElement.parentElement; // 向上遍历父级
+                                    }
+                                }
+
+                                return label ? label.textContent : null;
+                            }
+
                             // 查找字段
                             function findFields() {
                                 const inputs = document.querySelectorAll('input, textarea');
@@ -124,11 +145,11 @@ document.addEventListener('DOMContentLoaded', function () {
                                     let bestMatch = { field: null, score: 0, element: null };
 
                                     // 1. 检查 label（权重 1.5）
-                                    const label = input.closest('label') || document.querySelector(`label[for="${input.id}"]`);
-                                    if (label && label.textContent) {
-                                        const matches = getMatchedField(label.textContent, labelSynonyms);
+                                    const labelText = findLabel(input);
+                                    if (labelText) {
+                                        const matches = getMatchedField(labelText);
                                         matches.forEach(match => {
-                                            const weightedScore = match.score * 1.5; // 赋予 label 权重 1.5
+                                            const weightedScore = match.score * 1.5; // label 权重 1.5
                                             if (weightedScore > bestMatch.score) {
                                                 bestMatch = { ...match, score: weightedScore, element: input };
                                             }
