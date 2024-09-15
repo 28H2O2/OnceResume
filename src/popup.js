@@ -4,16 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentTab = tabs[0];
         const url = new URL(currentTab.url);
         const websiteStatusElement = document.getElementById('websiteStatus');
-
+        websiteStatusElement.textContent = '当前网站可用';
+        websiteStatusElement.className = 'status match';
+        
         // 目标网站的域名匹配规则，例如 jobs.bytedance.com
-        const targetDomain = 'jobs.bytedance.com';
-        if (url.hostname === targetDomain) {
-            websiteStatusElement.textContent = '当前网站匹配字节跳动招聘网站';
-            websiteStatusElement.className = 'status match';
-        } else {
-            websiteStatusElement.textContent = '当前网站不匹配';
-            websiteStatusElement.className = 'status nomatch';
-        }
+        // const targetDomain = 'jobs.bytedance.com';
+        // if (url.hostname === targetDomain) {
+        //     websiteStatusElement.textContent = '当前网站匹配字节跳动招聘网站';
+        //     websiteStatusElement.className = 'status match';
+        // } else {
+        //     websiteStatusElement.textContent = '当前网站不匹配';
+        //     websiteStatusElement.className = 'status nomatch';
+        // }
     });
 
     // 检查是否已填写个人信息
